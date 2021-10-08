@@ -10,6 +10,7 @@ public class QueueMain {
 	static ArrayList<Integer> priority;
 	private static int max;
 	
+	// Linear swapping, allow to move new enqueue to be in front.
 	public static void swap() {
 		for (int i = priority.size()-1; i > 0; i--) {
 			Collections.swap(value, i, i-1);
@@ -17,9 +18,11 @@ public class QueueMain {
 		}	
 	}
 	
+	// Adding value and priority into Queue list
 	public static void enqueue(String[] token) {
 		int temp = 0;
 		
+		// Enqueue cases trigger under certain circumstances
 		if (priority.size() == max) {
 			for (int i = 0; i < priority.size()-1; i++) {
 				if (priority.get(temp) < priority.get(i+1))
@@ -47,6 +50,7 @@ public class QueueMain {
 		}
 	}
 	
+	// Dequeue, only trigger when there is something in Queue list
 	public static void dequeue() {
 		int temp = 0;
 		
@@ -63,6 +67,7 @@ public class QueueMain {
 		}
 	}
 	
+	// Main method
 	public static void main(String[] args) throws FileNotFoundException {
 		File inputFile = new File("C:\\Users\\thien\\Eclipse_Project\\Priority_Queue\\src\\TestFile");
 		Scanner input = new Scanner(inputFile);
