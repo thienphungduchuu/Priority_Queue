@@ -16,3 +16,4 @@ enqueue 8 2
 dequeue
 dequeue
 enqueue 10 0
+enqueue 5 2
